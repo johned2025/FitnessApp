@@ -1,0 +1,39 @@
+<h2>Welcome, {{ userName }}</h2>
+<!-- Main dashboard container -->
+<div class="p-6 grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+  <!-- User goals card -->
+  <mat-card class="shadow-lg p-4 rounded-xl">
+    <mat-card-header>
+      <mat-card-title class="text-xl font-semibold">Your Goals</mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="space-y-2 mt-2 text-sm">
+      <p>🎯 Target Weight: <span class="font-medium">{{ dashboardData?.goals.weight_goal }} kg</span></p>
+      <p>🔥 Daily Calories: <span class="font-medium">{{dashboardData?.goals.calories_goal}} kcal</span></p>
+      <p>💪 Protein: <span class="font-medium"> {{dashboardData?.goals.protein_goal}}g</span></p>
+    </mat-card-content>
+  </mat-card>
+
+  <!-- Activity summary card -->
+  <mat-card class="shadow-lg p-4 rounded-xl">
+    <mat-card-header>
+      <mat-card-title class="text-xl font-semibold">Today’s Activity</mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="space-y-2 mt-2 text-sm">
+      <p>🏋️‍♂️ Sessions completed: <span class="font-medium">{{dashboardData?.ex_today.count}}</span></p>
+      <p>🔥 Calories burned: <span class="font-medium"></span>{{dashboardData?.ex_today.total_calories}}</p>
+      <p>🍽️ Calories consumed: <span class="font-medium">{{dashboardData?.meals_today.total_calories}}</span></p>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="shadow-lg p-4 rounded-xl">
+    <mat-card-header>
+      <mat-card-title class="text-xl font-semibold">Weekly Summary</mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="space-y-2 mt-2 text-sm">
+      <p>🏅 Workouts this week: <span class="font-medium">{{dashboardData?.this_week.count}}</span></p>
+      <p>🔥 Total calories burned: <span class="font-medium">{{dashboardData?.this_week.total_calories}}</span></p>
+      <p>🍽️ Total calories consumed: <span class="font-medium">{{ dashboardData?.meals_this_week.total_calories}}</span></p>
+    </mat-card-content>
+  </mat-card>
+
+</div>
